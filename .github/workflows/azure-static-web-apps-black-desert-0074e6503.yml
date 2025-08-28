@@ -2,16 +2,15 @@ name: Azure Static Web Apps CI/CD
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches: [ main ]
+    branches: [ main ]    # ← adapte si ta branche est différente
   workflow_dispatch:
 
 jobs:
-  build_and_deploy_job:
-    if: github.event_name != 'pull_request' || github.event.action == 'closed'
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,23 +26,11 @@ jobs:
       - name: Deploy Static Web App (no build)
         uses: Azure/static-web-apps-deploy@v1
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           action: upload
-          app_location: /
+          app_location: /          # ← METS ICI TON SOUS-DOSSIER SI BESOIN
           api_location: ""
-          output_location: /
+          output_location: /       # ← idem, même valeur que app_location
           skip_app_build: true
           is_static_export: true
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Close Pull Request
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          action: close
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-
-
+          production_branch: main  # ← adapte si ta branche est différente
