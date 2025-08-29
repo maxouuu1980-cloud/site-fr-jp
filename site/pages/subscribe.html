@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>S’abonner / 購読する — FR・JP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      
+<div class="nav">
+  <div class="brand"><span class="dot"></span> Art de Vivre Durable — FR・JP</div>
+  <div class="lang-toggle">
+    <button type="button" data-lang-btn="fr">FR</button>
+    <button type="button" data-lang-btn="jp">日本語</button>
+  </div>
+</div>
+
+    
+<section class="hero">
+  <div>
+    <span class="pill">Premium</span>
+    <h1 data-fr>Accédez aux newsletters et archives</h1>
+    <h1 class="jp hide" data-jp>ニュースレターとアーカイブにアクセス</h1>
+    <p class="muted" data-fr>Stripe Checkout sécurisé. Annulation à tout moment.</p>
+    <p class="muted jp hide" data-jp>Stripeチェックアウトで安全に。いつでも解約可能。</p>
+    <div class="actions">
+      <a class="btn-outline" href="/pages/overview.html" data-fr>Voir l’aperçu éditorial</a>
+      <a class="btn-outline hide" data-jp href="/pages/overview.html">編集方針</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1600&auto=format&fit=crop" alt="Food table">
+  </div>
+</section>
+
+<section class="section grid-2">
+  <div class="card">
+    <h3 data-fr>Abonnement mensuel</h3><h3 class="jp hide" data-jp>月額プラン</h3>
+    <p class="price">5,00 € / mois</p>
+    <p class="muted" data-fr>Sans engagement — annulation en 1 clic.</p>
+    <p class="muted jp hide" data-jp>契約縛りなし・ワンクリック解約。</p>
+    <form action="/create-checkout-session" method="post" style="margin-top:12px;">
+      <button class="btn" type="submit" data-fr>S’abonner / 購読する</button>
+      <button class="btn hide" type="submit" data-jp>購読する</button>
+    </form>
+  </div>
+  <div class="card">
+    <h3 data-fr>Déjà abonné ?</h3><h3 class="jp hide" data-jp>既に購読中？</h3>
+    <p class="muted" data-fr>Accédez directement aux archives.</p>
+    <p class="muted jp hide" data-jp>すぐにアーカイブへ。</p>
+    <a class="btn-outline" href="/archives/">Accéder / アクセス</a>
+  </div>
+</section>
+
+      <div class="footer">© 2025 Art de Vivre Durable FR–JP — Tous droits réservés</div>
+    </div>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
