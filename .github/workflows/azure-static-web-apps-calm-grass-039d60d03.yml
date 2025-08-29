@@ -34,7 +34,7 @@ jobs:
 
           # 🚀 Déploiement d'un site statique déjà prêt (pas de build)
           action: upload
-          app_location: "/"      # index.html à la racine du repo
+          app_location: "/site"     
           output_location: ""    # pas de répertoire de build
           api_location: ""       # pas d'API
           skip_app_build: true   # évite Oryx
@@ -52,3 +52,4 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           action: close
+
