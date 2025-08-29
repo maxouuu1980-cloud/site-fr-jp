@@ -36,7 +36,6 @@ jobs:
           output_location: ""     # 👉 pas de dossier de build
           api_location: ""        # 👉 pas d'API
           skip_app_build: true    # 👉 évite Oryx
-          skip_api_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -48,3 +47,4 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           action: close
+
